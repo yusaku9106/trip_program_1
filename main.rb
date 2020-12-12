@@ -17,13 +17,13 @@ end
 case plan_num
 when 1
   puts "沖縄旅行ですね。"
-  amount = 10000
+  charge = 10000
 when 2
   puts "北海道旅行ですね。"
-  amount = 20000
+  charge = 20000
 when 3
   puts "九州旅行ですね。"
-  amount = 15000
+  charge = 15000
 end
 
 puts "何名で予約されますか？"
@@ -36,12 +36,9 @@ while true
 end
 
 puts "#{member}名ですね。"
-
+total_charges = charge * member
 if member >= 5
   puts "5名以上ですので10%割引となります"
-  total_amount = amount*member*0.9
-  puts "合計金額は#{total_amount.floor}円になります。"
-else
-  total_amount = amount*member
-  puts "合計金額は#{total_amount}円になります。"
+  total_charges *= 0.9
 end
+puts "合計金額は#{total_charges.floor}円になります。"
